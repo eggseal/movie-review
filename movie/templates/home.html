@@ -6,7 +6,24 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<h1>Welcome to Home, <span style="color: blue">{{ name }}</span></h1>
-		<p>This is the full page</p>
+		<h1>Welcome to MovieReviews</h1>
+		<div class="container">
+			<form action="/">
+				<div class="mb-3">
+					<label for="search">Search a movie title: </label>
+					<input class="form-control" name="search" />
+				</div>
+				<button type="submit" class="btn btn-primary">Search</button>
+			</form>
+			<p>Searching for {{ search }}...</p>
+			{% for movie in movies %}
+			<h2>{{ movie.title }}</h2>
+			<p>{{ movie.description }}</p>
+			<img src="{{ movie.image.url }}" alt="Movie Banner" />
+			{% if movie.url %}
+			<a href="{{ movie.url }}">View</a>
+			{% endif %} {% endfor %}
+			<br />
+		</div>
 	</body>
 </html>
