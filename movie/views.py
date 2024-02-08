@@ -5,7 +5,7 @@ from .models import Movie
 
 # Create your views here.
 def home(request):
-    search = request.GET.get('search')
+    search = request.GET.get('search') or ""
     movies = Movie.objects.filter(title__contains=search)
     args = {
         'search': search,
