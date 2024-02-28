@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block content %}
+
+<body>
+	<div class="d-flex gap-2">
+		<div class="card overflow-hidden flex-grow-1">
+			<header class="card-header text-body-emphasis">
+				<h3>Movies per Year</h3>
+			</header>
+			<img
+				src="data:image/png;base64,{{ graphic_year }}"
+				class="card-img-top"
+				alt="Movies per year chart"
+			/>
+		</div>
+		<div class="card" style="width: 50%">
+			<header class="card-header text-body-emphasis">
+				<h3>Movies per Genre</h3>
+			</header>
+			<img
+				src="data:image/png;base64,{{ graphic_genre }}"
+				class="card-img-top"
+				alt="Movies per genre chart"
+			/>
+		</div>
+	</div>
+</body>
+
+{% endblock content %}
